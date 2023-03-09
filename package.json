@@ -1,0 +1,14 @@
+{
+  "name": "my-notes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Astronaut-X-X <307680186@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.61"
+  }
+}
