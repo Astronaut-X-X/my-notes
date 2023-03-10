@@ -4,10 +4,11 @@
 
 export const sidebarEn = [
     {
-        text: 'Home',
-        link: '/',
+        text: 'Notes',
         children: [
             {
+                text: 'Home',
+                link: '/',
             },
         ],
     },

@@ -41,6 +41,7 @@ export default defineUserConfig({
                 sidebar: sidebarEn,
                 // page meta
                 editLinkText: 'Edit this page on GitHub',
+                home: '/zh/'
             },
 
             /**

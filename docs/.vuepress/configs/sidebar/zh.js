@@ -4,10 +4,11 @@
 
 export const sidebarZh = [
     {
-        text: '首页',
-        link: '/',
+        text: '笔记',
         children: [
             {
+                text: '首页',
+                link: '/',
             },
         ],
     },
