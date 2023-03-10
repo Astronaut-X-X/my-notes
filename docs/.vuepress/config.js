@@ -10,7 +10,7 @@ import {
 } from './configs'
 
 export default defineUserConfig({
-    base: '/',
+    base: '/my-notes/',
 
     // site-level locales config
     locales: {
