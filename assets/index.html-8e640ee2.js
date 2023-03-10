@@ -1,0 +1,1 @@
+import{_ as t,p as a,q as o,R as e,t as n}from"./framework-efe98465.js";const s={},c=e("h1",{id:"home-page",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#home-page","aria-hidden":"true"},"#"),n(" Home Page")],-1),r=e("hr",null,null,-1),_=[c,r];function d(h,i){return a(),o("div",null,_)}const m=t(s,[["render",d],["__file","index.html.vue"]]);export{m as default};
