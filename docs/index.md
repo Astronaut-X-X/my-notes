@@ -1,9 +1,10 @@
 ---
-lang: en-US
-title: Home Page
-description: Home Page
+lang: zh-CN
+title: 笔记
+description: 笔记
 ---
 
-# Home Page
+# 笔记
+
 
 ---

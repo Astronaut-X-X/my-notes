@@ -1,6 +1,15 @@
-/*
-
-*/
+/**
+ * 
+ * 侧边栏目录
+ * 
+ * SidebarItem:
+ *  {
+ *      text: '名称'
+ *      link: '路由'
+ *      children: [SidebarItem,...]
+ *  }
+ * 
+ */
 
 export const sidebarEn = [
     {
@@ -8,7 +17,7 @@ export const sidebarEn = [
         children: [
             {
                 text: 'Home',
-                link: '/',
+                link: '/en',
             },
         ],
     },

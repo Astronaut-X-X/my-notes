@@ -5,6 +5,6 @@
 export const navbarEn = [
     {
         text: 'Home',
-        link: '/',
+        link: '/en',
     },
 ]
