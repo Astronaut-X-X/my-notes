@@ -25,6 +25,10 @@ export const sidebarZh = [
         text: '其他',
         children: [
             {
+                text: 'Makefile',
+                link: '/other/makefile.md',
+            },
+            {
                 text: '模板',
                 link: '/template',
             }
