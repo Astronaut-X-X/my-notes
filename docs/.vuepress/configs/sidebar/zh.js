@@ -22,16 +22,39 @@ export const sidebarZh = [
         ],
     },
     {
+        text: '微服务',
+        children: [
+            {
+                text: 'Go-kit 1',
+                link: '/microserver/go-kit_1.md',
+            },
+        ]
+    },
+    {
+        text: 'Golang',
+        children: [
+            {
+                text: 'Slice',
+                link: '/golang/slice.md',
+            },
+        ]
+    },
+    {
+        text: '网络',
+        children: [
+            {
+                text: 'TCP',
+                link: '/network/tcp.md',
+            },
+        ]
+    },
+    {
         text: '其他',
         children: [
             {
                 text: 'Makefile',
                 link: '/other/makefile.md',
             },
-            {
-                text: '模板',
-                link: '/template',
-            }
         ]
     }
 ]
