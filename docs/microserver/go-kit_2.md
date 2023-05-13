@@ -15,14 +15,17 @@ tags:
 
 # Micro Server
 
-此文为 go-kit 的 stringsvc1 例子
+此文为 go-kit 的 stringsvc2 例子  
+主要介绍了如何增加中间件 Middleware  
+文中所述的代码放置位置与官方实例有所不同，请注意  
+文中有表述不当的地方，可以通过 issue 请指出，谢谢阅读
 
-[stringsvc1](https://gokit.io/examples/stringsvc.html#stringsvc1)
+[stringsvc1](https://gokit.io/examples/stringsvc.html#middlewares)
 
 流程步骤：
 
 > 1、定义服务
-```golang
+```Golang
 // 定义提供的服务
 type StringService interface {
 	Uppercase(string) (string, error)
@@ -52,6 +55,8 @@ func (s *stringService) Count(str string) int {
 }
 ```
 
+上述代码与 go-kit_1 中文件相同，但为了更好组织代码。我们用一个叫 service.go 的文件存储上述代码。
+
 > 3、服务调用消息定义
 ```golang
 
@@ -78,7 +83,7 @@ type countResponse struct {
 
 ```
 
-上述服务及消息的定义可以使用 protobuf 定义。简化定义过程
+上述代码同样存放 service.go 存放。此处定义了消息的结构
 
 > 4、定义 Endpoint
 ```golang
@@ -113,6 +118,7 @@ func makeCountEndpoint(svc StringService) endpoint.Endpoint {
 + endpoint.Endpoint 的签名为 func(ctx context.Context, request interface{}) (response interface{}, err error)
 
 + Endpoint 主要负责对 RPC 服务请求的处理
++ 创建一个叫 endpoint.go 的文件存放上述代码
 
 > 5、创建 解码请求消息 编码响应消息 
 ```golang
@@ -145,43 +151,83 @@ func encodeResponse(_ context.Context, w http.ResponseWriter, response interface
 - 上述 RPC 服务通过 HTTP 协议完成通讯，其中的请求消息以 JSON 格式通过 HTTP 发送
 - 接收到消息后需要将 JSON 消息解析到不同的请求消息结构体中
 - 响应时，需要将 response 编码成 JSON 格式，不同的响应消息可以统一处理
+- 创建一个叫 transport.go 的文件存放上述代码
+
+> 6、创建以 HTTP 为通讯协议的 RPC 服务
 
 ```golang
 
-func main() {
-    // 创建服务
-	svc := stringService{}
-
-    // 创建 Uppercase 的 Transport 
-	uppercaseHandler := httptransport.NewServer(
+// 创建 Uppercase 的 HTTP 处理服务
+func makeUppercaseHandler(svc StringService) *httptransport.Server {
+	return httptransport.NewServer(
 		makeUppercaseEndpoint(svc),
 		decodeUppercaseRequest,
 		encodeResponse,
 	)
+}
 
-    // 创建 Countcase 的 Transpornt
-	countHandler := httptransport.NewServer(
+// 创建 Uppercase 的 HTTP 处理服务
+func makeCountcaseHandler(svc StringService) *httptransport.Server {
+	return httptransport.NewServer(
 		makeCountEndpoint(svc),
 		decodeCountRequest,
 		encodeResponse,
 	)
+}
 
-    // 注册到 HTTP 服务中
+```
+
+- 创建生成 以 HTTP 协议为通讯基础的 RPC 服务
+- 在 transport.go 的文件添加上述代码
+
+> 7、创建执行 main 方法
+
+```golang
+package main
+
+import (
+	"net/http"
+	"os"
+
+	"github.com/go-kit/kit/log"
+)
+
+func main() {
+	// 使用 go-kit 的日志
+	logger := log.NewLogfmtLogger(os.Stderr)
+
+	// 创建 service
+	svc := &stringService{}
+
+	// 创建 service 的 handler
+	uppercaseHandler := makeUppercaseHandler(svc)
+	countHandler := makeCountHandler(svc)
+
+	// 开启以 HTTP 为通讯协议的 RPC 服务
 	http.Handle("/uppercase", uppercaseHandler)
 	http.Handle("/count", countHandler)
 
-    // 开启 HTTP 服务
-    log.Fatal(http.ListenAndServe(":8080", nil))
+	// 输出服务端口地址信息
+	logger.Log("msg", "HTTP", "addr", ":8080")
+	logger.Log("err", http.ListenAndServe(":8080", nil))
 }
+
 ```
 
-- 可以使用 Postman 发送 HTTP 的 POST 请求到 localhost:8080/uppercase 测试 RPC 服务
-- 官方使用 Curl 发送请求
++ 创建一个名为 main.go 的文件存放上述代码
++ 此时的目录结构如下
 
-```bash
-$ curl -XPOST -d'{"s":"hello, world"}' localhost:8080/uppercase
-{"v":"HELLO, WORLD"}
-$ curl -XPOST -d'{"s":"hello, world"}' localhost:8080/count
-{"v":12}
-```
+>  目录结构：
+>  ├ service.go
+>  ├ endpoint.go
+>  ├ transport.go
+>  └ main.go
 
++ 上述代码只是创建了一个 RPC 服务，下面我们增加日志中间件
++ 中间件可以添加在 Endpoint 层，也可添加在 Service 层，参考官方文档：[Middleware](https://gokit.io/examples/stringsvc.html#middlewares)
+
+- Endpoint 层的中间件函数签名为：type Middleware func(Endpoint) Endpoint
+- 
+
+
+> 8、日志中间件

@@ -28,6 +28,10 @@ export const sidebarZh = [
                 text: 'Go-kit 1',
                 link: '/microserver/go-kit_1.md',
             },
+            {
+                text: 'Go-kit 2',
+                link: '/microserver/go-kit_2.md',
+            },
         ]
     },
     {
