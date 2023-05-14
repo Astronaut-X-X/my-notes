@@ -103,24 +103,22 @@ subsitute 命令允许我们查找并替换掉文本，并支持正则式
 ### Window 窗口
 窗口是可视化的分割区域
 + 一个缓冲区可以分割成多个窗口，每个窗口也可以打开不同缓冲区
-+ <Ctrl+w>s 水平分割， <Ctrl+w>v 垂直分割。或者  :sp 和 :vs
++ \<Ctrl+w\>s 水平分割， \<Ctrl+w\>v 垂直分割。或者  :sp 和 :vs
 + 每个窗口可以继续被无限分割（取决于你的屏幕大小）
 + 切换窗口的命令使用 Ctrl + w (window)作为前缀
 命令        用途
-<C-w>w      在窗口间循环切换
-<C-w>h      切换到左边窗口
-<C-w>j      切换到下面窗口
-<C-w>k      切换到上面窗口
-<C-w>l      切换到右边窗口
+\<C-w\>w      在窗口间循环切换
+\<C-w\>h      切换到左边窗口
+\<C-w\>j      切换到下面窗口
+\<C-w\>k      切换到上面窗口
+\<C-w\>l      切换到右边窗口
 
 ### Tab （标签页）
 + 使用 :tabnew file_name 打开新标签页
 + 使用 gt 切换到下个标签页 使用 gT 切换到上个标签页
-+ 使用 <Ctrl+w>c (close) 关闭当前活动的标签页
++ 使用 \<Ctrl+w\>c (close) 关闭当前活动的标签页
 + :tabonly 保留当前标签页
 + :tabclose 关闭当前标签页 
 
 ### backspace 模式
-+ 使用 :set backspace={mode} 
-+ 
- 
++ 使用 :set backspace={mode}
