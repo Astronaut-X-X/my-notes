@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.61">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>Micro Server | Astronaut-X-X</title><meta name="description" content="Micro Server">
+    <link rel="preload" href="/my-notes/assets/style-fcc36540.css" as="style"><link rel="stylesheet" href="/my-notes/assets/style-fcc36540.css">
+    <link rel="modulepreload" href="/my-notes/assets/app-4073d6dd.js"><link rel="modulepreload" href="/my-notes/assets/framework-efe98465.js"><link rel="modulepreload" href="/my-notes/assets/go-kit_2.html-d26827d7.js"><link rel="modulepreload" href="/my-notes/assets/go-kit_2.html-71588390.js"><link rel="prefetch" href="/my-notes/assets/index.html-201eef5e.js" as="script"><link rel="prefetch" href="/my-notes/assets/work.html-c17b9492.js" as="script"><link rel="prefetch" href="/my-notes/assets/index.html-c32d3125.js" as="script"><link rel="prefetch" href="/my-notes/assets/slice.html-8be2d26b.js" as="script"><link rel="prefetch" href="/my-notes/assets/blob.html-36da0d26.js" as="script"><link rel="prefetch" href="/my-notes/assets/file.html-45e5bab3.js" as="script"><link rel="prefetch" href="/my-notes/assets/note.html-5702dccb.js" as="script"><link rel="prefetch" href="/my-notes/assets/go-kit_1.html-75ceb611.js" as="script"><link rel="prefetch" href="/my-notes/assets/index.html-7107e86f.js" as="script"><link rel="prefetch" href="/my-notes/assets/index.html-fb68f07b.js" as="script"><link rel="prefetch" href="/my-notes/assets/proxy.html-2374687c.js" as="script"><link rel="prefetch" href="/my-notes/assets/tcp.html-b22bb03f.js" as="script"><link rel="prefetch" href="/my-notes/assets/makefile.html-8747bb12.js" as="script"><link rel="prefetch" href="/my-notes/assets/index.html-774bea00.js" as="script"><link rel="prefetch" href="/my-notes/assets/index.html-63cf3ccd.js" as="script"><link rel="prefetch" href="/my-notes/assets/vimrc.html-1621d829.js" as="script"><link rel="prefetch" href="/my-notes/assets/404.html-f9875e7b.js" as="script"><link rel="prefetch" href="/my-notes/assets/index.html-77706562.js" as="script"><link rel="prefetch" href="/my-notes/assets/work.html-bccbf26b.js" as="script"><link rel="prefetch" href="/my-notes/assets/index.html-469664fa.js" as="script"><link rel="prefetch" href="/my-notes/assets/slice.html-ab2a9fc6.js" as="script"><link rel="prefetch" href="/my-notes/assets/blob.html-717cffcb.js" as="script"><link rel="prefetch" href="/my-notes/assets/file.html-68a7a994.js" as="script"><link rel="prefetch" href="/my-notes/assets/note.html-2db79e68.js" as="script"><link rel="prefetch" href="/my-notes/assets/go-kit_1.html-45b1d0a0.js" as="script"><link rel="prefetch" href="/my-notes/assets/index.html-9dd6fd95.js" as="script"><link rel="prefetch" href="/my-notes/assets/index.html-2c808bac.js" as="script"><link rel="prefetch" href="/my-notes/assets/proxy.html-db2aadca.js" as="script"><link rel="prefetch" href="/my-notes/assets/tcp.html-9bdb91b0.js" as="script"><link rel="prefetch" href="/my-notes/assets/makefile.html-047037e5.js" as="script"><link rel="prefetch" href="/my-notes/assets/index.html-00d4a1a8.js" as="script"><link rel="prefetch" href="/my-notes/assets/index.html-a6f8e6ce.js" as="script"><link rel="prefetch" href="/my-notes/assets/vimrc.html-64542279.js" as="script"><link rel="prefetch" href="/my-notes/assets/404.html-ebc5def2.js" as="script">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/my-notes/" class=""><!----><span class="site-name">Astronaut-X-X</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/my-notes/" class="" aria-label="首页"><!--[--><!--]--> 首页 <!--[--><!--]--></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="选择语言"><span class="title">选择语言</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="选择语言"><span class="title">选择语言</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a aria-current="page" href="/my-notes/microserver/go-kit_2.html" class="router-link-active router-link-exact-active router-link-active" aria-label="简体中文"><!--[--><!--]--> 简体中文 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/my-notes/en/" class="" aria-label="English"><!--[--><!--]--> English <!--[--><!--]--></a></li><!--]--></ul></div></div><!--]--></nav><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/my-notes/" class="" aria-label="首页"><!--[--><!--]--> 首页 <!--[--><!--]--></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="选择语言"><span class="title">选择语言</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="选择语言"><span class="title">选择语言</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a aria-current="page" href="/my-notes/microserver/go-kit_2.html" class="router-link-active router-link-exact-active router-link-active" aria-label="简体中文"><!--[--><!--]--> 简体中文 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/my-notes/en/" class="" aria-label="English"><!--[--><!--]--> English <!--[--><!--]--></a></li><!--]--></ul></div></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading">笔记 <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/my-notes/" class="sidebar-item" aria-label="首页"><!--[--><!--]--> 首页 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading active">微服务 <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/my-notes/microserver/go-kit_1.md" class="sidebar-item" aria-label="Go-kit 1"><!--[--><!--]--> Go-kit 1 <!--[--><!--]--></a><!----></li><li><a href="/my-notes/microserver/go-kit_2.md" class="sidebar-item active" aria-label="Go-kit 2"><!--[--><!--]--> Go-kit 2 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading">Golang <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/my-notes/golang/slice.md" class="sidebar-item" aria-label="Slice"><!--[--><!--]--> Slice <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading">网络 <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/my-notes/network/tcp.md" class="sidebar-item" aria-label="TCP"><!--[--><!--]--> TCP <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading">其他 <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/my-notes/other/makefile.md" class="sidebar-item" aria-label="Makefile"><!--[--><!--]--> Makefile <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="micro-server" tabindex="-1"><a class="header-anchor" href="#micro-server" aria-hidden="true">#</a> Micro Server</h1><p>此文为 go-kit 的 stringsvc2 例子<br> 主要介绍了如何增加中间件 Middleware<br> 文中所述的代码放置位置与官方实例有所不同，请注意<br> 文中有表述不当的地方，可以通过 issue 请指出，谢谢阅读</p><p><a href="https://gokit.io/examples/stringsvc.html#middlewares" target="_blank" rel="noopener noreferrer">stringsvc1<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><p>流程步骤：</p><blockquote><p>1、定义服务</p></blockquote><div class="language-Golang line-numbers-mode" data-ext="Golang"><pre class="language-Golang"><code>// 定义提供的服务
+type StringService interface {
+	Uppercase(string) (string, error)
+	Count(string) int
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>2、实现服务</p></blockquote><div class="language-golang line-numbers-mode" data-ext="golang"><pre class="language-golang"><code>// 服务实现
+type stringService struct{}
+
+// 定义空字符串响应错误
+var ErrEmpty error = errors.New(&quot;empty string&quot;)
+
+// 实现服务中的 Uppercase 方法 
+func (s *stringService) Uppercase(str string) (string, error){
+    if str == &quot;&quot; {
+        return &quot;&quot;, ErrEmpty
+    }
+    return strings.ToUpper(str), nil
+}
+
+// 实现服务中的 Count 方法
+func (s *stringService) Count(str string) int {
+    return len(str)
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上述代码与 go-kit_1 中文件相同，但为了更好组织代码。我们用一个叫 service.go 的文件存储上述代码。</p><blockquote><p>3、服务调用消息定义</p></blockquote><div class="language-golang line-numbers-mode" data-ext="golang"><pre class="language-golang"><code>
+// 服务 Uppercase 的请求消息
+type uppercaseRequest struct {
+    S string `json:&quot;s&quot;`
+}
+
+// 服务 Uppercase 的响应消息
+type uppercaseResponse struct {
+    V string `json:&quot;v&quot;`
+    Err string  `json:&quot;err,omitempty&quot;` // omitempty：表示该字段在序列化为 JSON 字符串时如果是零值或空值，则不会出现在 JSON 对象中。
+}
+
+// 服务 Count 的请求消息
+type countRequest struct {
+    S string `json:&quot;s&quot;`
+}
+
+// 服务 Count 的响应消息
+type countResponse struct {
+	V int `json:&quot;v&quot;`
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上述代码同样存放 service.go 存放。此处定义了消息的结构</p><blockquote><p>4、定义 Endpoint</p></blockquote><div class="language-golang line-numbers-mode" data-ext="golang"><pre class="language-golang"><code>
+// 创建 Uppercase 的 Endpoint
+func makeUppercaseEndpoint(svc StringService) endpoint.Endpoint {
+	return func(_ context.Context, request interface{}) (interface{}, error) {
+		req := request.(uppercaseRequest)
+		v, err := svc.Uppercase(req.S)
+		if err != nil {
+			return uppercaseResponse{v, err.Error()}, nil
+		}
+		return uppercaseResponse{v, &quot;&quot;}, nil
+	}
+}
+
+// 创建 Countcase 的 Endpoint
+func makeCountEndpoint(svc StringService) endpoint.Endpoint {
+	return func(_ context.Context, request interface{}) (interface{}, error) {
+		req := request.(countRequest)
+		v := svc.Count(req.S)
+		return countResponse{v}, nil
+	}
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>Endpoints are a primary abstraction in go-kit. An endpoint represents a single RPC (method in our service interface)</li><li>Endpoint 是主要的抽象，代表一个 RPC（服务的方法）</li></ul><ul><li><p>上述的 StringService 是步骤 1 中抽象出来的一个服务包含两个方法</p></li><li><p>endpoint.Endpoint 的签名为 func(ctx context.Context, request interface{}) (response interface{}, err error)</p></li><li><p>Endpoint 主要负责对 RPC 服务请求的处理</p></li><li><p>创建一个叫 endpoint.go 的文件存放上述代码</p></li></ul><blockquote><p>5、创建 解码请求消息 编码响应消息</p></blockquote><div class="language-golang line-numbers-mode" data-ext="golang"><pre class="language-golang"><code>
+// 先定义编解码的请求方法，此处用的 HTTP 作为 RPC 的通讯协议
+// Uppercase 的请求解码
+func decodeUppercaseRequest(_ context.Context, r *http.Request) (interface{}, error) {
+	var request uppercaseRequest
+	if err := json.NewDecoder(r.Body).Decode(&amp;request); err != nil {
+		return nil, err
+	}
+	return request, nil
+}
+
+// Countrcase 的请求解码
+func decodeCountRequest(_ context.Context, r *http.Request) (interface{}, error) {
+	var request countRequest
+	if err := json.NewDecoder(r.Body).Decode(&amp;request); err != nil {
+		return nil, err
+	}
+	return request, nil
+}
+
+// 响应编码
+func encodeResponse(_ context.Context, w http.ResponseWriter, response interface{}) error {
+	return json.NewEncoder(w).Encode(response)
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>上述 RPC 服务通过 HTTP 协议完成通讯，其中的请求消息以 JSON 格式通过 HTTP 发送</li><li>接收到消息后需要将 JSON 消息解析到不同的请求消息结构体中</li><li>响应时，需要将 response 编码成 JSON 格式，不同的响应消息可以统一处理</li><li>创建一个叫 transport.go 的文件存放上述代码</li></ul><blockquote><p>6、创建以 HTTP 为通讯协议的 RPC 服务</p></blockquote><div class="language-golang line-numbers-mode" data-ext="golang"><pre class="language-golang"><code>
+// 创建 Uppercase 的 HTTP 处理服务
+func makeUppercaseHandler(svc StringService) *httptransport.Server {
+	return httptransport.NewServer(
+		makeUppercaseEndpoint(svc),
+		decodeUppercaseRequest,
+		encodeResponse,
+	)
+}
+
+// 创建 Uppercase 的 HTTP 处理服务
+func makeCountcaseHandler(svc StringService) *httptransport.Server {
+	return httptransport.NewServer(
+		makeCountEndpoint(svc),
+		decodeCountRequest,
+		encodeResponse,
+	)
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>创建生成 以 HTTP 协议为通讯基础的 RPC 服务</li><li>在 transport.go 的文件添加上述代码</li></ul><blockquote><p>7、创建执行 main 方法</p></blockquote><div class="language-golang line-numbers-mode" data-ext="golang"><pre class="language-golang"><code>package main
+
+import (
+	&quot;net/http&quot;
+	&quot;os&quot;
+
+	&quot;github.com/go-kit/kit/log&quot;
+)
+
+func main() {
+	// 使用 go-kit 的日志
+	logger := log.NewLogfmtLogger(os.Stderr)
+
+	// 创建 service
+	svc := &amp;stringService{}
+
+	// 创建 service 的 handler
+	uppercaseHandler := makeUppercaseHandler(svc)
+	countHandler := makeCountHandler(svc)
+
+	// 开启以 HTTP 为通讯协议的 RPC 服务
+	http.Handle(&quot;/uppercase&quot;, uppercaseHandler)
+	http.Handle(&quot;/count&quot;, countHandler)
+
+	// 输出服务端口地址信息
+	logger.Log(&quot;msg&quot;, &quot;HTTP&quot;, &quot;addr&quot;, &quot;:8080&quot;)
+	logger.Log(&quot;err&quot;, http.ListenAndServe(&quot;:8080&quot;, nil))
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>创建一个名为 main.go 的文件存放上述代码</li><li>此时的目录结构如下</li></ul><blockquote><p>目录结构： ├ service.go ├ endpoint.go ├ transport.go └ main.go</p></blockquote><ul><li>上述代码只是创建了一个 RPC 服务，下面我们增加日志中间件</li><li>中间件可以添加在 Endpoint 层，也可添加在 Service 层，参考官方文档：<a href="https://gokit.io/examples/stringsvc.html#middlewares" target="_blank" rel="noopener noreferrer">Middleware<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></li></ul><ul><li>Endpoint 层的中间件函数签名为：type Middleware func(Endpoint) Endpoint</li><li></li></ul><blockquote><p>8、日志中间件</p></blockquote></div><!--[--><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: 307680186@qq.com">Astronaut-X-X</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/my-notes/" class="" aria-label="笔记"><!--[--><!--]--> 笔记 <!--[--><!--]--></a></span><span class="next"><a href="/my-notes/" class="" aria-label="笔记"><!--[--><!--]--> 笔记 <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/my-notes/assets/app-4073d6dd.js" defer></script>
+  </body>
+</html>

@@ -14,7 +14,7 @@ func (s *stringService) Uppercase(str string) (string, error){
     if str == &quot;&quot; {
         return &quot;&quot;, ErrEmpty
     }
-    return strings.Upercase(str), nil
+    return strings.ToUpper(str), nil
 }
 
 // 实现服务中的 Count 方法
@@ -23,7 +23,7 @@ func (s *stringService) Count(str string) int {
 }
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>3、服务调用消息定义</p></blockquote><div class="language-golang line-numbers-mode" data-ext="golang"><pre class="language-golang"><code>
 // 服务 Uppercase 的请求消息
-type uppercaseRequset struct {
+type uppercaseRequest struct {
     S string \`json:&quot;s&quot;\`
 }
 
@@ -40,7 +40,7 @@ type countRequest struct {
 
 // 服务 Count 的响应消息
 type countResponse struct {
-    V string \`json:&quot;v&quot;\`
+	V int \`json:&quot;v&quot;\`
 }
 
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上述服务及消息的定义可以使用 protobuf 定义。简化定义过程</p><blockquote><p>4、定义 Endpoint</p></blockquote><div class="language-golang line-numbers-mode" data-ext="golang"><pre class="language-golang"><code>
@@ -65,7 +65,7 @@ func makeCountEndpoint(svc StringService) endpoint.Endpoint {
 	}
 }
 
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>Endpoints are a primary abstraction in go-kit. An endpoint represents a single RPC (method in our service interface)</li><li>Endpoint 是主要的抽象，代表一个 RPC（服务的方法）</li></ul><ul><li>上述的 StringService 是步骤 1 中抽象出来的一个服务包含两个方法</li><li>endpoint.Endpoint 的签名为 func(ctx context.Context, request interface{}) (response interface{}, err error)</li></ul><blockquote><p>5、创建 Transport</p></blockquote><div class="language-golang line-numbers-mode" data-ext="golang"><pre class="language-golang"><code>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>Endpoints are a primary abstraction in go-kit. An endpoint represents a single RPC (method in our service interface)</li><li>Endpoint 是主要的抽象，代表一个 RPC（服务的方法）</li></ul><ul><li><p>上述的 StringService 是步骤 1 中抽象出来的一个服务包含两个方法</p></li><li><p>endpoint.Endpoint 的签名为 func(ctx context.Context, request interface{}) (response interface{}, err error)</p></li><li><p>Endpoint 主要负责对 RPC 服务请求的处理</p></li></ul><blockquote><p>5、创建 解码请求消息 编码响应消息</p></blockquote><div class="language-golang line-numbers-mode" data-ext="golang"><pre class="language-golang"><code>
 // 先定义编解码的请求方法，此处用的 HTTP 作为 RPC 的通讯协议
 // Uppercase 的请求解码
 func decodeUppercaseRequest(_ context.Context, r *http.Request) (interface{}, error) {
