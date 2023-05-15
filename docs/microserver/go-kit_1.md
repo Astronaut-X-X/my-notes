@@ -15,7 +15,9 @@ tags:
 
 # Micro Server
 
-此文为 go-kit 的 stringsvc1 例子
+此文为 go-kit 的 stringsvc1 例子  
+此文主要写了如何使用 go-kit 创建一个简单的基于 http 协议的 RPC 服务  
+文中有表述不当的地方，可以通过 issue 请指出，谢谢阅读
 
 [stringsvc1](https://gokit.io/examples/stringsvc.html#stringsvc1)
 
