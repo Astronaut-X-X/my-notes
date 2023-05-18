@@ -25,12 +25,20 @@ export const sidebarZh = [
         text: '微服务',
         children: [
             {
+                text: '基础知识',
+                link: '/microserver/basic-knowledge.md',
+            },
+            {
                 text: 'Go-kit 1',
                 link: '/microserver/go-kit_1.md',
             },
             {
                 text: 'Go-kit 2',
                 link: '/microserver/go-kit_2.md',
+            },
+            {
+                text: 'Go-kit 3',
+                link: '/microserver/go-kit_3.md',
             },
         ]
     },
