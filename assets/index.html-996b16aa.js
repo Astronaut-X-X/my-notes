@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-0314b485","path":"/microservice/","title":"微服务","lang":"zh-CN","frontmatter":{"lang":"zh-CN","title":"微服务","description":"微服务"},"headers":[],"git":{"updatedTime":1684380870000,"contributors":[{"name":"Astronaut-X-X","email":"307680186@qq.com","commits":1}]},"filePathRelative":"microservice/index.md"}');export{e as data};
