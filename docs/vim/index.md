@@ -112,6 +112,7 @@ subsitute 命令允许我们查找并替换掉文本，并支持正则式
 \<C-w\>j      切换到下面窗口
 \<C-w\>k      切换到上面窗口
 \<C-w\>l      切换到右边窗口
+\<C-w\>x      交换窗口位置
 
 ### Tab （标签页）
 + 使用 :tabnew file_name 打开新标签页
@@ -122,3 +123,6 @@ subsitute 命令允许我们查找并替换掉文本，并支持正则式
 
 ### backspace 模式
 + 使用 :set backspace={mode}
+
+### Terminal 开启
++ 使用 :term 开启一个命令行（注意：vim 版本需要大于等于8.1）
